@@ -20,6 +20,7 @@ mongoose.connect(process.env.DATABASE_URI, {
 // middlewares
 app.use(cors());
 app.use(morgan('dev'));
+app.use(express.json());
 
 // route middleware
 readdirSync('./routes').map((routes) => app.use('/api', require(`./routes/${routes}`)));
