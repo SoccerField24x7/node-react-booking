@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import RegisterForm from "../components/RegisterForm";
+import { register } from '../actions/auth';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -14,7 +15,7 @@ const Register = () => {
         e.preventDefault();
         
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API}/register`, {
+            const response = await register({
                 name,
                 email,
                 password
