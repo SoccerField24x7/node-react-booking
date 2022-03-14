@@ -14,7 +14,7 @@ const RegisterForm = ({ handleSubmit, name, setName, email, setEmail, password, 
                 <label className="form-label">Password</label>
                 <input type="password" className="form-control" placeholder="Enter Email" value={password} onChange={(e) => setPassword(e.target.value)} />
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary" disabled={!name || !email || !password}>Submit</button>
         </form>
 );
 
